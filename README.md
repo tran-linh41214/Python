@@ -6,6 +6,7 @@ top_3_product_ids = payment_enriched.groupby('product_id')['volume'].sum().nlarg
 print(top_3_product_ids)
 ```
 *Product_id của Top 3 sản phẩm có hiệu suất lớn nhất: 1976, 429, 372*
+
 **2**. **Given that 1 product_id is only owed by 1 team, are there any abnormal products against this rule?**
 ```python
 # Kiểm tra sản phẩm thuộc nhiều hơn 1 team
@@ -14,6 +15,7 @@ abnormal_products = team_check[team_check > 1]
 print(abnormal_products)
 ```
 *=> Không có sản phẩm nào thuộc nhiều hơn 1 team*
+
 **3. Find the team has had the lowest performance (lowest volume) since Q2.2023. Find the category that contributes the least to that team.**
 ```python
 # Lọc các dữ liệu từ Q2.2023 trở đi
@@ -31,6 +33,7 @@ print(lowest_team_category)
 ```
 *- Team có hiệu suất thấp nhất: APS (volume: 51141753)*
 *- Category đóng góp ít nhất: PXXXXXE (volume: 25232438)*
+
 **4. Find the contribution of source_ids of refund transactions (payment_group = ‘refund’), what is the source_id with the highest contribution?**
 ```python
 # Tìm source_id có đóng góp cao nhất cho giao dịch 'refund'
@@ -39,6 +42,7 @@ top_refund_source = refunds.groupby('source_id')['volume'].sum().idxmax()
 print(top_refund_source)
 ```
 *Source_id có bị hoàn tiền nhiều nhất là 38*
+
 **5. Define type of transactions (‘transaction_type’) for each row**
 ```python
 # Thiết lập hàm để xác định các loại giao dịch
