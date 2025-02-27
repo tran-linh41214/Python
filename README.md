@@ -1,5 +1,5 @@
 #  Python - E-Commerce-Customer-Churn-Analysis
-1. Top 3 product_ids with the highest volume.
+**1**. **Top 3 product_ids with the highest volume.**
 ```python
 # Top 3 product_id có volume cao nhất
 top_3_product_ids = payment_enriched.groupby('product_id')['volume'].sum().nlargest(3)
